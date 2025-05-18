@@ -3,7 +3,7 @@ name: Build Docker Image
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
@@ -22,4 +22,4 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/GitHubActions:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_PASSWORD }}/GitHubActions:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/GitHubActions:latest
